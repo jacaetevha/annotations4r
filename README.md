@@ -6,7 +6,7 @@ Example
 =======
 ```ruby
 $:.unshift '.'
-require 'annotate'
+require 'annotations4r'
 
 class A
   def initialize num
