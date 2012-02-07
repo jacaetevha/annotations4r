@@ -1,3 +1,9 @@
+Caveat
+=======
+This is just a toy project, not at all ready for consumption. I'll release a Gem sometime in the future after I have kicked the tires for a while. I also don't have any tests/specs yet.
+
+You've been warned. :)
+
 Why?
 =======
 Why have annotations in Ruby? Well, just because you can. We don't want to get to a Java-luted state with it, but the question was brought up on LinkedIn (http://tinyurl.com/7l3u6mr) and I decided to try a simple implementation. Who knows? It could be useful sometime down the road.
