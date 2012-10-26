@@ -29,9 +29,8 @@ describe "Annotations4r" do
 
   context "improper overrides" do
     it "raises ArityMismatch" do
-      expects {
+      expect {
         Class.new(A) do
-        require 'debugger'; debugger
           include Annotations
 
           override
