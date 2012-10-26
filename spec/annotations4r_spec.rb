@@ -2,6 +2,8 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 
 describe "Annotations4r" do
   class A
+    include Annotations
+    
     def self.no_arg_clazz_method
       'no_arg_clazz_method'
     end
@@ -31,8 +33,6 @@ describe "Annotations4r" do
     it "raises ArityMismatch" do
       expect {
         Class.new(A) do
-          include Annotations
-
           override
           def self.two_arg_clazz_method one
             super(one, 2)
