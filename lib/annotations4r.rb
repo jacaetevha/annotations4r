@@ -1,4 +1,6 @@
 module Annotations
+  class ArityMismatch < ::StandardError; end
+  
   def override
     @check_method = true
   end
@@ -12,7 +14,7 @@ module Annotations
       super_method = clazz.method method_name
       my_method = self.method method_name
       unless super_method.arity == my_method.arity
-        raise "Arity Mismatch: #{clazz}>>##{method_name}(#{super_method.arity}) vs. #{self}>>##{method_name}(#{my_method.arity})"
+        raise ArityMismatch, "#{clazz}>>##{method_name}(#{super_method.arity}) vs. #{self}>>##{method_name}(#{my_method.arity})"
       end
     end
     @check_method = false
@@ -27,7 +29,7 @@ module Annotations
       super_method = clazz.instance_method method_name
       my_method = self.instance_method method_name
       unless super_method.arity == my_method.arity
-        raise "Arity Mismatch: #{clazz}##{method_name}(#{super_method.arity}) vs. #{self}##{method_name}(#{my_method.arity})"
+        raise ArityMismatch, "#{clazz}##{method_name}(#{super_method.arity}) vs. #{self}##{method_name}(#{my_method.arity})"
       end
     end
     @check_method = nil
